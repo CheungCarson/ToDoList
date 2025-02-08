@@ -17,15 +17,19 @@ def delete():
 window = Tk()
 window.resizable(FALSE,FALSE)
 
+#Listener Events for "Enter" and "Delete" keys
 window.bind("<Return>", lambda event: add_btn.invoke())
 window.bind("<Delete>", lambda event: complete_btn.invoke())
 
+#Button to add task to list
 add_btn = Button(window,text="Add Task",command=add)
 add_btn.grid(row=0,column=0)
 
+#Button to mark completed task
 complete_btn = Button(window,text="Complete",command=delete)
 complete_btn.grid(row=1,column=0,sticky=N)
 
+#User input
 input = Entry(window, font=("Arial",15))
 input.grid(row=0,column=1,sticky=E)
 
